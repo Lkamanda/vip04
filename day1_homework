@@ -1,0 +1,150 @@
+day1 homework  周佳霖 
+
+- 1. restful风格接口：
+    - 是一种软件架构风格，而不是一个标准，提供一组设计设计原则与约束条件
+    1）推荐格式
+    - url格式：
+        http(s)://server.com/api-name/{version}/{domain}/{rest-convention}
+        - version:代表api版本
+        - domain:用来定义任意技术分区
+        - rest-convention:domain 下约定的rest接口集合
+        
+    - 参数格式：
+        - get采用的参数格式
+            - url参数(更推荐)：http://www.example.com/v1？name=‘lk-abc%’&age=’lt-10’
+            - 路径参数：http://www.example.com/v1/employees/{id}
+            
+        - post采用的俩种格式：
+            - json格式包装参数提交
+                post   http://www.example.com/v1.1
+                       Content-type: application/json;charset=utf-8
+                       {"title":"test","sub":[1,2,3]}
+            - form 表单
+                post  http:www.example.com/v1
+                      Content-type: application/x-www-form-urlencoded;charset=utf-8
+                      title=test&sub%5B%5D=1&sub%5B%5D=2&sub%5B%5D=3
+          
+        -  返回格式：
+            {
+             "status”: 200,
+
+             "message”:"用户查询返回成功”,
+
+             “document”:”https://www.example.com/doc#userinfo”,
+
+             "data”: {
+
+                "className”: "com.fiberhome.smartas.pricecloud.User”,
+
+                "id”:“1b434wtert564564sdffey32”,
+
+                "name”: "lilei",
+
+                "age”: 18,
+
+                "job”: {
+
+                    "className”:"com.fiberhome.smartas.pricecloud.Job”,
+
+                    "id”: “1b434wtert564564sdffeyey”,
+
+                    "name”: “微服务架构师”
+    
+                    }
+               }
+           }
+           
+   - 2）协议：http 和 https 均可
+   - 3）域名：建议将api部署到专有域名下，以此屏蔽消费者获取服务提供方部署细节（可以借助平台的反向代理+路由网关），在服务丰富起来后可以考虑多级域名
+   - 4）版本：可以将版本信息放到url中，也可放在http请求头中，但不如放到url中直观方便
+   - 5）复数名词路径：在Restful框架中，每个网址代表一个资源（resource），所以网址中不能有动词，而且所用的名词往往与数据库表明相对应。而且数据库中表一般
+                   都是同种记录的集合(collection),所以api中的名词都应该是复数
+   
+        http://www.example.com/v1/employees
+   - 6)http协议表达类型操作
+        1)  GET（SELECT）：从服务器取出资源（一项或多项）。
+
+        2)  POST（CREATE）：在服务器新建一个资源。
+
+        3)  PUT（UPDATE）：在服务器更新资源（客户端提供改变后的完整资源）。
+
+        4)  PATCH（UPDATE）：在服务器更新资源（客户端提供改变的属性）。
+
+        5)  DELETE（DELETE）：从服务器删除资源
+
+        6)  HEAD：获取资源的元数据。
+
+        7)  OPTIONS：获取信息，关于资源的哪些属性是客户端可以改变的。
+
+        8)  TRACE：回显服务器收到的请求，主要用于测试或诊断。 
+
+        9)  CONNECT：HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。
+
+        10) MOVE： 请求服务器将指定的页面移至另一个网络地址。
+
+        11) COPY： 请求服务器将指定的页面拷贝至另一个网络地址。
+
+        12) LINK： 请求服务器建立链接关系。
+
+        13) UNLINK： 断开链接关系。
+
+        14) WRAPPED： 允许客户端发送经过封装的请求。
+
+        15) Extension-mothed：在不改动协议的前提下，可增加另外的方法。
+
+   - 7）过滤信息
+        - 请求过滤，排序，选择，分页
+        - 1.Filtering过滤
+            - 使用唯一的查询方式进行过滤
+            GET/car?color=red  返回红色的car
+        - 2.Sorting：排序
+            - 允许针对多个字段进行排序
+            - GET/cars?sort=-manufactorer,+model
+            - 返回根据消费者降序或升序排列的car集合      
+        -3. Fieldselection
+        移动端能够显示其中一些字段，它们其实不需要一个资源的所有字段，给API消费者一个选择字段的能力，这会降低网络流量，提高API可用性。
+        GET /cars?fields=manufacturer,model,id,color
+        
+       - 4）Paging分页
+    
+            - 使用 limit 和offset.实现分页，缺省limit=20 和offset=0；
+    
+            - GET /cars?offset=10&limit=5
+    
+            - 为了将总数发给客户端，使用订制的HTTP头：X-Total-Count.
+    
+            - 链接到下一页或上一页可以在HTTP头的link规定，遵循Link规定:
+    
+            Link:<https://blog.mwaysolutions.com/sample/api/v1/cars?offset=15&limit=5>;rel="next",
+                 <https://blog.mwaysolutions.com/sample/api/v1/cars?offset=50&limit=3>;rel="last",
+                 <https://blog.mwaysolutions.com/sample/api/v1/cars?offset=0&limit=5>;rel="first",
+                 <https://blog.mwaysolutions.com/sample/api/v1/cars?offset=5&limit=5>;rel="prev",
+   - 8)返回状态码
+        
+        1)  200 OK - [GET]：服务器成功返回用户请求的数据，该操作是幂等的（Idempotent）。
+
+        2)  201 CREATED -[POST/PUT/PATCH]：用户新建或修改数据成功。
+        
+        3)  202 Accepted - [*]：表示一个请求已经进入后台排队（异步任务）
+        
+        4)  204 NO CONTENT - [DELETE]：用户删除数据成功。
+        
+        5)  400 INVALID REQUEST -[POST/PUT/PATCH]：用户发出的请求有错误，服务器没有进行新建或修改数据的操作，该操作是幂等的。
+        
+        6)  401 Unauthorized - [*]：表示用户没有权限（令牌、用户名、密码错误）。
+        
+        7)  403 Forbidden - [*] 表示用户得到授权（与401错误相对），但是访问是被禁止的。
+        
+        8)  404 NOT FOUND - [*]：用户发出的请求针对的是不存在的记录，服务器没有进行操作，该操作是幂等的。
+        
+        9)  406 Not Acceptable - [GET]：用户请求的格式不可得（比如用户请求JSON格式，但是只有XML格式）。
+        
+        10)  410Gone -[GET]：用户请求的资源被永久删除，且不会再得到的。
+        
+        11)  422Unprocesable entity - [POST/PUT/PATCH] 当创建一个对象时，发生一个验证错误。
+        
+        12)  500INTERNAL SERVER ERROR - [*]：服务器发生错误，用户将无法判断发出的请求是否成功。
+
+- 2.       
+
+        
