@@ -145,6 +145,61 @@ day1 homework  周佳霖
         
         12)  500INTERNAL SERVER ERROR - [*]：服务器发生错误，用户将无法判断发出的请求是否成功。
 
-- 2.       
+- 2. .练习git使用：
+	a-GitHub新建仓库，本地进行克隆，然后修改代码git pull，进行提交git add git commit git push
 
-        
+	b-练习切换分支git checkout，查看分支git status，合并分支git merge，查看当前状态的命令git status，查看修改信息git diff
+
+    git 完成    
+-3 。预习：面向对象的类、属性、方法、实例化、
+    完成
+
+
+3、求10阶乘
+sum = 1
+for i in range(1,11):
+    sum = sum * i
+
+print(sum)
+
+4、求100以内能被3整除的数，并将作为列表输出
+list1 = []
+for i in range(1,101):
+    if i % 3 == 0:
+        list1.append(i)
+
+print(list1)
+
+5、列表[1,2,3,4,3,4,2,5,5,8,9,7],将此列表去重，得到一个唯一元素的列表
+list_old = [1,2,3,4,3,4,2,5,5,8,9,7]
+list_new = []
+
+for i in list_old:
+    if i not in list_new:
+        list_new.append(i)
+
+print(list_new)
+6、求斐波那契数列 1 2 3 5 8 13 ⋯⋯
+def feb(n):
+    while n >=0:
+        if n <= 1:
+            return n
+        return feb(n-1) + feb(n-2)
+
+for i in range(1,10):
+    print(feb(i))
+
+
+7、求10000以内的质数
+num = []
+for i in range(2,1001):
+    for j in range(2,i):
+        if i%j == 0:
+            break
+        else:
+            if i not in num:
+                num.append(i)
+
+print(num)
+9.电脑抓包和手机抓包实战操作，一定要做，这是基本功。抓包工具fiddler和charlse不限
+-未完成，在出差预计周4 周5完成
