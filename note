@@ -50,20 +50,70 @@ DAY1
     - git checkout [branch-name] 切换到指定分支
     - git merge [branch-name] 将其他分支和当前分支进行合并
 
-
-- 输出方式
-    print(("%d,%f,%s"%(a,b,c)))
+- python
+    - 多数据同时输入：a,b = input("").split() --split内添加分割符
     
-    print('a和b的知：', a,b)
-    
-    print('a的知为%d,b的值为%s'%(a,b))
-    
-    print('a的知为：{}, b的知为：{}'.format(a,b))
-    
-    print(f"a的知为：{a},b的值为:{b}")
-
-
-    - 
-    print('%03d'%a)
-    print('%.2f'%a)
-    
+    - 输出方式
+        print(("%d,%f,%s"%(a,b,c)))
+        
+        print('a和b的知：', a,b)
+        
+        print('a的知为%d,b的值为%s'%(a,b))
+        
+        print('a的知为：{}, b的知为：{}'.format(a,b))
+        
+        print(f"a的知为：{a},b的值为:{b}")
+        - 输出方式：
+            print('%03d'%a)      a=1  001
+            print('%.2f'%a) 
+    - tuple ：
+        - a = (1,2,3,4,5)  print(a[1:4])  (2, 3, 4) 
+        - a[1:4:2]  2为步长
+    - list：
+        l.reverse() 原列表反转
+        l.sort() 原列表排序
+        sorted(l) 返回（l列表进行排序后的列表）
+        l.insert(index, object) 
+            - 在index序号前插入 object
+            l = [1,2,3,4,5]
+            l.insert(3,"i")  print(l)   [1, 2, 3, 'i', 4, 5]
+        l.append(object) 末尾追加
+        a.extend(b)
+            - 列子
+            a = [1,2,3]  b = ['a','b'] 
+            a.extend(b)  print(a,b) 
+            [1, 2, 3, 'a', 'b', 'c'] ['a', 'b', 'c']
+            在a列表后追加b
+        a.pop(b):将列表a的a[b]弹出并返回
+            - 例子
+            a = [1,2,3,4,5]
+            a.pop(3)
+            [1, 2, 3, 5] 4
+        l.remove(n):将l列表中第一个出现的n移出
+        l.index(n):返回n在列表a中的序列号
+        l.count(n):返回n在列表a中出现的次数
+        l.max l.min  len(l) l.clear()
+        del l[n]
+       
+    - 集合 set 
+        - 特点：无序，不可以试用卡索引
+        s.add(object) 
+        s.remove(object) 删除集合中指定的对象，object不存在报错
+        s.discard(object) 删除集合中指定对象，object不存在不报错
+        s.clear()
+        
+    - 字典 dict 
+        - 定义：{"key":"values"， "k":"v"}
+        - 特性： 字典无序， 不能通过下表引用
+            - 只能通过建值来引用 dict[key]
+            - dict[key] = "11" 如果key存在则为修改key值，如key不存在则为插入k，v 
+            - dict.keys() 取出所有的建
+            - dict.values()取出所有的值
+            - dict.clear()
+            - del dict[key]
+            
+        
+                
+        
+        
+          
