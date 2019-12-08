@@ -199,6 +199,14 @@ for i in range(2,1001):
         else:
             if i not in num:
                 num.append(i)
+                
+list = [] 
+for i in range(2,101):
+    flag = True
+    for j in range(2,i):
+        if i%j == 0:
+            flag = False
+    
 
 print(num)
 9.电脑抓包和手机抓包实战操作，一定要做，这是基本功。抓包工具fiddler和charlse不限

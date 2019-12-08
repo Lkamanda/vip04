@@ -1,0 +1,36 @@
+函数默认参数应为不可变对象
+
+try:
+    print(a/b)
+
+except (ZeroDivisionError,NameError) as e:
+    print(e)
+except Exception as e:
+    print(e)
+
+except BaseException as e:
+    print(e) 
+
+else：
+    print('没有异常的时候才执行')  
+finally:
+    print('无论如何让都执行')
+    
+try except 如果有 return finally 会覆盖最后一次return 值
+
+- 文件的IO
+     - 模式：r读  r+读写  w（覆盖）  
+     w+ 读写/覆盖 a 
+     - f.read(n) n 为文件的指针位置
+     - f.readline() 读取整行
+     - f.readlines() 读取文件所有行，作为一个列表输出
+     - f.read()
+     写入
+     - write写入单个字符串
+     - writelines 写入多个字符串
+     
+- if __name__ == "__main__":
+- self代表实例本身
+
+- super() 子类中用super()
+- 私有属性，私有方法
