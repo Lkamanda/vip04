@@ -184,3 +184,47 @@ old_house.return_all()
 4）.枪 能够 装填子弹 --增加子弹的数量
 
 """
+class Solid(object):
+    def __init__(self, name):
+        self.name = name
+    def shut(self,temp):
+        if temp.shut() == 1:
+            print('开火')
+
+    def tz(self,temp):
+        if temp.tz() == 1:
+            print('装弹')
+
+class Rob(object):
+    def __init__(self, name):
+        self.num = 0
+        self.name = name
+    def shut(self):
+        """temporary_num = 0 作为一个状态，只有为1时候才能出发之后的事件"""
+        temporary_sh = 0
+        if self.num >0:
+            self.num -= 1
+            print(self.num)
+            temporary_sh = 1
+        else:
+            print("弹夹空了，请装弹")
+        return temporary_sh
+
+    def tz(self):
+        temporary_tz = 0
+        if self.num <= 30:
+            self.num = 30
+            print(self.num)
+            temporary_tz = 1
+        else:
+            print("已经到了最大容量")
+        return temporary_tz
+
+ak = Rob(name="ak47")
+rs = Solid(name="瑞士")
+rs.tz(ak)
+rs.shut(ak)
+rs.shut(ak)
+rs.tz(ak)
+
+
