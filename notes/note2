@@ -19,8 +19,9 @@ finally:
 try except 如果有 return finally 会覆盖最后一次return 值
 
 - 文件的IO
-     - 模式：r读  r+读写  w（覆盖）  
-     w+ 读写/覆盖 a 
+     - 模式：r读  r+读写  w（覆盖/新建）
+     w+ 读写/覆盖
+     a 追加
      - f.read(n) n 为文件的指针位置
      - f.readline() 读取整行
      - f.readlines() 读取文件所有行，作为一个列表输出
