@@ -35,3 +35,19 @@ try except 如果有 return finally 会覆盖最后一次return 值
 
 - super() 子类中用super()
 - 私有属性，私有方法
+
+# 类对象
+class human(object):
+
+    color= 'red'
+
+    def __sy(self):
+        print('私有')
+
+    @classmethod
+    def lf(cls):
+        return cls.color
+
+    @staticmethod
+    def jt():
+        print('jt')

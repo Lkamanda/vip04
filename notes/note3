@@ -1,0 +1,23 @@
+# dumps 将python类型转成 json
+# loads 将js 转成python 
+
+post 请求发送json 数据
+
+- data
+- json 
+
+
+
+测试数据管理
+
+报告： 结果，错误信息
+
+jikens
+
+1.python 正则
+2.readExcal模块
+3.os包的用法- path 
+4. 找实际项目中的接口实现get/post 清酒，带关联的接口
+
+
+

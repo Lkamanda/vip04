@@ -91,6 +91,8 @@ class Human1(object):
         self.weight = weight
         self.name = name
 
+
+
     def run(self):
         self.weight -= 0.5
         self.tz()
@@ -134,8 +136,12 @@ class House(object):
         :return:返回房子的剩余面积
         """
         temporary_mj = self.mj
+
         for f in self.furniture:
-            temporary_mj -= f.mj
+            if temporary_mj > f.mj:
+                temporary_mj -= f.mj
+            else:
+                print("房间面积不够了")
         return temporary_mj
 
     def return_fn(self):
@@ -155,11 +161,23 @@ class House(object):
         else:
             print("输出:户型:{0},总面积：{1}，剩余面积：{2}，家具名称列表{3}".format(self.hx, self.mj, self.return_mj(), self.return_fn()))
 
+    def __str__(self):
+        if self.furniture == ():
+            temp_furniture = "新房子没有家具"
+            xl="输出:户型：{0}， 面积：{1}{3}, 家具：{2}".format(self.hx, self.mj, temp_furniture, self.mj_d)
+            return xl
+        else:
+
+            xl= "输出:户型:{0},总面积：{1}，剩余面积：{2}，家具名称列表{3}".format(self.hx, self.mj, self.return_mj(), self.return_fn())
+            return xl
+
+
 
 class Furniture(object):
     def __init__(self, name, mj):
         self.name = name
         self.mj = mj
+
     def rb(self):
         return self.mj
 
@@ -187,6 +205,7 @@ old_house.return_all()
 class Solid(object):
     def __init__(self, name):
         self.name = name
+
     def shut(self,temp):
         if temp.shut() == 1:
             print('开火')
@@ -199,6 +218,7 @@ class Rob(object):
     def __init__(self, name):
         self.num = 0
         self.name = name
+
     def shut(self):
         """temporary_num = 0 作为一个状态，只有为1时候才能出发之后的事件"""
         temporary_sh = 0
