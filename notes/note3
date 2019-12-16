@@ -19,5 +19,63 @@ jikens
 3.os包的用法- path 
 4. 找实际项目中的接口实现get/post 清酒，带关联的接口
 
+# requests 包
+- get:
+body = {
+    k1:v1,
+    k2,v2
+}
+r = requests.get(url=url, params=body)
+- 获取请求返回内容： r.text  r.content
+- 获取响应状态码： r.status
+- 获取以字典对象存储服务器请求头对象 r.headers
+- 获取非200请求返回状态码，如200 返回 None
+ r.raise_for_status()
 
+- 请求内容字典的情况
+    r = requests.post(url=url, data=body， headers=headers)
+- 请求参数为json
+    1) r = requests.post(url=url, json=body, headers=headers)
+    2) body = json.dumps(body)
+       r = requests.post(url=url, data=body)
+    - json.loads() 将json格式转化成dict
+
+- 测试断言
+1）响应状态码
+2）r.json() 下的具体字段
+3）实际业务逻辑
+
+# session
+
+- 使用cookie
+1)手动获取上一次cookie
+r1 = s.post(url, data)
+cookies = r1.cookies
+r2 = s.post(url=db_url, cookies=cookies)
+
+2)
+- 直接使用session
+初始化session
+s = requests.session()
+
+r1 = s.post(url, data)
+
+r2 = s.post(url)
+
+3)定制cookie，单独设置cookie
+r = requests.post(url=dl_url, data=data)
+cookies = {
+    "JSESSIONID":r.cookies["JSESSIONID"]
+}
+r1 = requests.post(url=db_url, cookies=cookies)
+4）定制cookies 放入headers
+r = requests.post(url=dl_url, data=data)
+headers={
+    "cookie":"JSESSIONID="+r.cookies["JSESSIONID"]
+}
+r1 = requests.post(url=db_url, headers=headers)
+
+# 使用token：用法和使用cookie一致，存入headers
+
+功能，逻辑业务，异常，安全进行测试
 

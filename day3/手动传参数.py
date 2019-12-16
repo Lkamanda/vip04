@@ -23,3 +23,4 @@ db_url = "https://www.wanandroid.com/lg/todo/list/0"
 db = requests.post(db_url, cookies=new_cookies)
 # print(db.status_code)
 print(db.text)
+
