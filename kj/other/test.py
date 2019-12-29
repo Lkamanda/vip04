@@ -8,6 +8,7 @@ body ={
     "source": 1
 }
 path = "u/login"
+
 r = requests.post(url=url+path, data=body)
 print(r.status_code)
 print(r.json())
@@ -18,6 +19,7 @@ print(r.headers)
 data = {
     "xAuthToken": r.headers["xAuthToken"]
 }
+
 token_path = "u/isEnabled"
 r_y = requests.post(url=url+token_path, data=data)
 print(r_y.text)
