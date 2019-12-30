@@ -9,7 +9,10 @@ def mp(arr):
                 arr[j], arr[j+1] = arr[j+1], arr[j]
     print(arr)
 
-mp(arr)
+# mp(arr)
 
-
-
+list1 = {'1':1,'2':2}
+list2 = list1
+list1['1'] = 5
+sum = list1['1'] + list2['1']
+print(sum)
