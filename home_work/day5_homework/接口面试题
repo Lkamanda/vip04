@@ -1,0 +1,28 @@
+1-你设计这套框架用了多久，维护了多少个接口/用例，运行一次需要多长时间
+2-你设计框架的时候遇到了哪些问题，你是怎么解决的
+    1。路径问题，测试数据的分发机制，依赖上一条测试用列的返回数据的某些字段，token的获取存放，以及娇艳token是否生效
+3-你都用过那些python的包
+unittest
+requests
+time
+os
+xlrd
+xlutils
+configparser
+HTMLTestRunner
+logging
+4-接口之间的数据依赖是怎么解决的
+5-你们的断言是怎么做的
+响应状态码，请求返回某些字段校验
+https://blog.csdn.net/qq_22795513/article/details/76187722
+6-介绍一下你的框架功能
+    1）使用xlrd 读取excal中数据，使用 congfigparser 读取配置文件
+    2）使用ddt分发数据
+    3）discover 构建测试集合，post 等请求方法的二次封装
+    4）运行测试，借口断言，将断言结果和异常和失败的借口返回数据写入excal
+    5）logging程序运行日志生成
+    6）HTMLTestRunner，生成测试报告，发送携带测试报告的邮件
+
+7-你认为目前框架还有哪些不足/优势
+1。更加细节的断言
+2。
