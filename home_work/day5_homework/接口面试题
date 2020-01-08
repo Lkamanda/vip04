@@ -12,6 +12,7 @@ configparser
 HTMLTestRunner
 logging
 4-接口之间的数据依赖是怎么解决的
+
 5-你们的断言是怎么做的
 响应状态码，请求返回某些字段校验
 https://blog.csdn.net/qq_22795513/article/details/76187722
@@ -22,6 +23,8 @@ https://blog.csdn.net/qq_22795513/article/details/76187722
     4）运行测试，借口断言，将断言结果和异常和失败的借口返回数据写入excal
     5）logging程序运行日志生成
     6）HTMLTestRunner，生成测试报告，发送携带测试报告的邮件
+    7）根据修改时间删除除最近10条的测试报告文件
+    8）提供log模块，生成track文件
 
 7-你认为目前框架还有哪些不足/优势
 1。更加细节的断言
