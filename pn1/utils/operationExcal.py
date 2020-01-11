@@ -1,19 +1,10 @@
+""""
+对excal的数据处理
+"""
 import xlrd
 from xlutils.copy import copy
 from pn1.utils.public import *
-
-
-class ExcalVariable(object):
-    caseID = 0
-    url = 2
-    request_data = 3
-    expect = 4
-    result = 5
-
-
-def getCaseID():
-    #
-    return ExcalVariable.caseID
+from pn1.utils.excalData import *
 
 
 class OperationExcel:
@@ -37,6 +28,21 @@ class OperationExcel:
         """
         return self.getExcel().cell_value(row, col)
 
-opera = OperationExcel()
-print(opera.get_rows())
-print(opera.get_row_cel(1, 1))
+    def get_url(self, row):
+        """获取"""
+        return self.get_row_cel(row, getBaseUrl()) + self.get_row_cel(row, getInterface())
+
+    def get_requestData(self, row):
+        """获取请求参数"""
+        return self.get_row_cel(row, getRequest_data())
+
+    def get_result(self):
+        """获取断言"""
+
+
+
+if __name__ == '__main__':
+    opera = OperationExcel()
+    # print(opera.get_rows())
+    # print(opera.get_row_cel(1, 1))
+    print(opera.get_requestData(1))

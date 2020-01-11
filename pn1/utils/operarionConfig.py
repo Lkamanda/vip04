@@ -1,2 +1,2 @@
-from pn1.utils.public import data_dir
+from pn1.utils.public import *
 

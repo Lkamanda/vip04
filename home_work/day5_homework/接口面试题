@@ -36,5 +36,10 @@ https://blog.csdn.net/qq_22795513/article/details/76187722
 
 7-你认为目前框架还有哪些不足/优势
 1。更加细节的断言
-2.应将excal中内容多的字段，存入json文件，方便excal美观维护
+2.应将excal中内容多的字段，存入json文件，方便excal美观维护，效率高
+
+
+维护成本
+效率
+版本切换
 
