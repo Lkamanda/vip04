@@ -17,9 +17,7 @@ class OperationJson(object):
 
     def get_Request_Json(self, row):
         """
-        通过读取json文件返回的是个字典格式的数据，通过对应的k，取出需要的请求参数v
-        :param row: 行数    self.excal.get_requestData(row） 字典的k
-        :return: 字典的v
+       v                                                                                                                                                                                                                                                        cv                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                v vbnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnbn
         """
         # return self.getReadJson()[self.excal.get_requestData(row)]
         return json.dumps(self.getReadJson()[self.excal.get_requestData(row=row)],
@@ -28,4 +26,6 @@ class OperationJson(object):
 
 if __name__ == '__main__':
     Oa = OperationJson()
+    print(type(Oa.getReadJson()))
     print(Oa.get_Request_Json(1))
+    print(type(Oa.get_Request_Json(1)))

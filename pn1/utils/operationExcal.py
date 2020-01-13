@@ -36,8 +36,12 @@ class OperationExcel:
         """获取请求参数"""
         return self.get_row_cel(row, getRequest_data())
 
-    def get_result(self):
-        """获取断言"""
+    def get_except(self, row):
+        return self.get_row_cel(row, getExcept_value())
+
+    def get_result(self, row):
+        """获取断言结果"""
+        return self.get_row_cel(row, getResult())
 
 
 

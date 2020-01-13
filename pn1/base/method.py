@@ -28,6 +28,23 @@ class Method(object):
             # 抛出一个异常
             raise RuntimeError('抛出未知的错误')
 
+    def post(self, row, data):
+        """
+        对post方法进行二次封装
+        :return:
+        """
+        try:
+            r = requests.post(
+                url=self.operationExcel.get_url(row=row),
+                data=data,
+                headers="",
+                timeout=6
+                              )
+            return r
+        except Exception as e:
+            # 抛出一个异常
+            raise RuntimeError('抛出未知的错误')
+
     def get(self):
         try:
             r = requests.get()
@@ -41,3 +58,16 @@ class Method(object):
             return r
         except Exception as e:
             raise RuntimeError('抛出未知错误')
+
+
+class IsAssert:
+    def __init__(self):
+        self.excel = OperationExcel()
+
+    def isContent(self, row, str2):
+        flag = None
+        if self.excel.get_except(row=row) in str2:
+            flag = True
+        else:
+            flag = False
+        return flag

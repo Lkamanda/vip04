@@ -3,7 +3,7 @@ class ExcalVariable(object):
     BaseUrl = 2
     interface = 3
     request_data = 4
-    expect = 5
+    expect_value = 5
     result = 8
 
 # Url = BaseUrl + interface
@@ -29,9 +29,9 @@ def getRequest_data():
     return ExcalVariable.request_data
 
 
-def getExcept():
+def getExcept_value():
     """获取断言的预期值"""
-    return ExcalVariable.expect
+    return ExcalVariable.expect_value
 
 
 def getResult():
