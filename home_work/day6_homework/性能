@@ -1,13 +1,26 @@
-1.现在主流系统的架构是怎样的
-2.你们公司的架构
-3.怎么检查缓存命中率：mysql
+1.现在主流系统的架构是怎样的:主流架构图
+2.你们公司的架构：公司网络架构图
+3.怎么检查缓存命中率：mysql https://www.cnblogs.com/wyy123/p/6089422.html
+                         查询缓存命中率 ≈ (Qcache_hits – Qcache_inserts) / Qcache_hits * 100%
+                         Qcache_hits：Query Cache 命中次数
+                         Qcache_inserts：向 Query Cache 中插入新的 Query Cache 的次数，也就是没有命中的次数
                      redis
-
+                         telnet localhost 6379  info
+                         keyspace_hits:
+                         keyspace_misses:
+                         keyspace_hits / (keyspace_hits + keyspace_misses)
 4.memchaced和redis的区别
+zset : 有序集合
+比较         redis                    Memcached
+线程上       单线程                     多线程
+数据结构 string list set hash zset    只支持key value
+实际应用 使用处理高流量的网站           不但能处理高流量的度，还能处理繁重的写入
 5.redis 为什么比mysql/oracle快
+-
+
 6.redis的操作命令都有哪些（不同的数据格式命令不同）
 7.redis支持哪些数据格式
-
+string list set hash zset
 
 -.性能测试如何开展
 1.获取测试需求

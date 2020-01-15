@@ -37,3 +37,13 @@ def getExcept_value():
 def getResult():
     """获取断言结果"""
     return ExcalVariable.result
+
+
+def getHeadValue():
+    """获取请求头"""
+    headers={
+        "Content-Type": '',
+        "User-Agent": "",
+        "Referer":""
+    }
+    return headers

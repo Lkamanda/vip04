@@ -1,58 +1,58 @@
-import unittest
-from ddt import ddt,data, unpack
-from common.sendRequest import readWrite
-readwrite = readWrite()
+# -*- coding: utf-8 -*-
+'''
+@Time    : 2019-12-29 16:49
+@Author  : zhoujialin
+@File    : configHttp.py
+'''
+import requests
+import json
 
+class configHttp(object):
 
+    def __init__(self):
+        print('开始请求接口')
+        # self.myData = myData
 
-
-@ddt
-class ChatTest(unittest.TestCase):
-    @classmethod
-    # def setUpClass(cls):
-    #     # 测试数据读取
-    #     #  此id 和 excal 表中保持一致
-    #     cls.id =  2
-    #     cls.readE = readExcel()
-    #     cls.dataList = cls.readE.assembleData()
-    #     # 测试数据写入
-    #     cls.url = cls.dataList[cls.id-1][1]
-    #     cls.http_method = cls.dataList[cls.id-1][2]
-    #     cls.data = cls.dataList[cls.id-1][4]
+    def get(self, url, params=None, **kw):
+        try:
+            res = requests.get(url, params, **kw)
+        except TimeoutError:
+            print('超时')
+        else:
+            return res
     #
-    #     # cls.assert_except = cls.dataList[cls.id-1][5]
-    #     # cls.assert_real = cls.dataList[cls.id-1][6]
-    #     # cls.result = cls.dataList[cls.id-1][7]
-    #     cls.configH = configHttp()
+    # def post(self, url, data=None, json=None, **kw ):
+    #     try:
+    #         res = requests.post(url, data=data, json=json, **kw)
+    #         print(res.json())
+    #     except TimeoutError:
+    #         print('超时')
+    #     else:
+    #         return res
 
 
+    def put(self):
+        print('put 请求')
+        return 0
 
-    def setUp(self):
-        pass
-
-    def test1(self):
-        id = 1
-        print('test1')
-        print(readwrite.get_data(id))
-        print('test2')
-
-    def test2(self):
-        id = 1
-        res = readwrite.send_request(id)
-        print('这是json',res.json())
-
-
-    # def test3(self):
-    #     # id = 2
-    #     # print(get_data(dataList, id))
-    #
-
-
-
-
+    def post(self, url,param):
+        result = requests.post(url=url, data=param)
+        print(result.status_code)
+        dict1 = json.loads(result.text)
+        print(dict1)
+        print(dict1['code'])
+        return dict1['code']
 
 
 if __name__ == '__main__':
-    unittest.main()
-
-
+    test = configHttp()
+    baseurl = "https://mall.jingcailvtu.org:9443"
+    path = "/appraise/getByGoodsId"
+    url = baseurl + path
+    param = {
+        "goodsSkuId": "1108354655246553",
+        "page": "0",
+        "size": "5",
+        "tagType": "1",
+    }
+    test.post(url=url, param=param)
