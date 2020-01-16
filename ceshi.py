@@ -19,6 +19,8 @@ class configHttp(object):
         except TimeoutError:
             print('超时')
         else:
+            print(res.text)
+            print(res.status_code)
             return res
     #
     # def post(self, url, data=None, json=None, **kw ):
@@ -35,7 +37,7 @@ class configHttp(object):
         print('put 请求')
         return 0
 
-    def post(self, url,param):
+    def post(self, url, params, **kw):
         result = requests.post(url=url, data=param)
         print(result.status_code)
         dict1 = json.loads(result.text)
@@ -47,12 +49,9 @@ class configHttp(object):
 if __name__ == '__main__':
     test = configHttp()
     baseurl = "https://mall.jingcailvtu.org:9443"
-    path = "/appraise/getByGoodsId"
+    path = "/couponNew/getCouponList"
     url = baseurl + path
     param = {
-        "goodsSkuId": "1108354655246553",
-        "page": "0",
-        "size": "5",
-        "tagType": "1",
+        # "mytype":""
     }
-    test.post(url=url, param=param)
+    test.get(url=url, params=param)
