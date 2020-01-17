@@ -17,6 +17,7 @@
     <option name="width" value="958" />
     <option name="height" value="1045" />
   </component>
+  <component name="ProjectId" id="1WWtK8djgGaLmCEXdeBqn5kLUyi" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -27,6 +28,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -75,5 +77,11 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="417" y="259" key="com.intellij.ide.util.TipDialog" timestamp="1579277116394">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="417" y="259" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1579277116394" />
   </component>
 </project>

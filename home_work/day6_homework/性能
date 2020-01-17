@@ -16,9 +16,11 @@ zset : 有序集合
 数据结构 string list set hash zset    只支持key value
 实际应用 使用处理高流量的网站           不但能处理高流量的度，还能处理繁重的写入
 5.redis 为什么比mysql/oracle快
--
+-mysql 持续化存储，数据存放位置在磁盘，存在磁盘中，应用读取数据难免涉及到文件io，这是mysql的性能瓶颈
+redis 缓存，数据存放在内存中，非数据同步数据正常工作的情况下是0io，所以很快，redis单线程，要是想实现多线程，并发实现很困难，还难测试，如执行一个很长的命令易造成阻塞，这也是redis的缺点单线程的缺点，
 
 6.redis的操作命令都有哪些（不同的数据格式命令不同）
+https://www.cnblogs.com/haoworld/p/redis-ji-ben-shu-ju-lei-xing-ji-ming-ling-cao-zuo-.html#toc_5
 7.redis支持哪些数据格式
 string list set hash zset
 
@@ -47,6 +49,6 @@ string list set hash zset
 存储位置    浏览器本地     服务器
 
 共同点：都是存储用户相关信息
-cookie 和 session 分别相当一张撒开俩半，小的分发给用户，大的存放服务
+cookie 和 session 分别相当一张纸撕开俩半，小的分发给用户，大的存放服务
 当用发送请求，携带cookie，与服务器进行通信，只有当俩张纸严丝合缝，则成功完成当前用户身份校验
 
