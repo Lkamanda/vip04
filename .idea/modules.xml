@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/vip04.iml" filepath="$PROJECT_DIR$/.idea/vip04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../interface/.idea/vip_interfacetest.iml" filepath="$PROJECT_DIR$/../interface/.idea/vip_interfacetest.iml" />
     </modules>
   </component>
 </project>
