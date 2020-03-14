@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7e878e1-726f-4ebe-bafd-f399eef0d7e3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/notes/性能2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vip04.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vip04.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/my" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/notes/性能3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,18 +51,22 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="473" y="240" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579313620194">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="442" y="223" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1581780565218">
+      <screen x="0" y="0" width="1344" height="800" />
     </state>
+    <state x="442" y="223" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1344.800@0.0.1344.800" timestamp="1581780565218" />
     <state x="473" y="240" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1579313620194" />
+    <state x="541" y="276" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1646.989/2880.0.1920.1040@0.0.1646.989" timestamp="1581127756879" />
     <state x="1610" y="382" key="FileChooserDialogImpl" timestamp="1579315374723">
       <screen x="0" y="0" width="2048" height="1240" />
     </state>
     <state x="1610" y="382" key="FileChooserDialogImpl/0.0.2048.1240@0.0.2048.1240" timestamp="1579315374723" />
-    <state x="741" y="470" key="com.intellij.ide.util.TipDialog" timestamp="1579314844129">
-      <screen x="0" y="0" width="2560" height="1560" />
+    <state x="389" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1584163636552">
+      <screen x="0" y="0" width="1344" height="800" />
     </state>
+    <state x="389" y="241" key="com.intellij.ide.util.TipDialog/0.0.1344.800@0.0.1344.800" timestamp="1584163636552" />
     <state x="417" y="259" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1579313532105" />
+    <state x="476" y="298" key="com.intellij.ide.util.TipDialog/0.0.1646.989/2880.0.1920.1040@0.0.1646.989" timestamp="1581127680245" />
     <state x="741" y="470" key="com.intellij.ide.util.TipDialog/0.0.2560.1560@0.0.2560.1560" timestamp="1579314844129" />
   </component>
 </project>
